@@ -1,6 +1,6 @@
 import java.io.FileWriter;
 import java.io.IOException;
-
+// comment
 public class File {
 	
 	public static void main (String[] args )
