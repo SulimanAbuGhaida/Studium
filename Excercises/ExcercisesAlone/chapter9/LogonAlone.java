@@ -102,6 +102,7 @@ public class LogonAlone extends JFrame {
             }
         });
 	
+		
 	
 	flowLayoutForCell = new JPanel(cellFlowLayout);
 	flowLayoutForCell.add( new JLabel("Port"));
