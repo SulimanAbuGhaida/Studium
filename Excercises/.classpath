@@ -13,5 +13,7 @@
 	<classpathentry kind="src" path="ExcercisesAlone"/>
 	<classpathentry kind="src" path="others"/>
 	<classpathentry kind="src" path="Übungen_Prog.2_Folien"/>
+	<classpathentry kind="src" path="BergNeels"/>
+	<classpathentry kind="src" path="lecture"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
