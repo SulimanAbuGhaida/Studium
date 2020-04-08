@@ -54,12 +54,35 @@ public class LDoubleLinkedListe<D> {
     
     
     public boolean contains(D data) {
-    	return false;
-    }
+ 	Node<D> currentNode = new Node<D>(data);
+    	
+    	if(this.firstNode==null && this.lastNode==null) {
+    		return false;
+    	}
+    	if(currentNode == firstNode) {
+			return true;	
+			}
+    		do {
+    			currentNode = currentNode.getNextNode();{
+    			if(currentNode.getData().equals(data))
+    				return true;
+    			}
+    			
+    		}while(currentNode.nextNode != null);
+			return false;
+    	}
     
     @Override
     public String toString() {
-    	return"Ausgabe komplette Liste";
+     	if(this.firstNode==null && this.lastNode==null) {
+    		return "null";
+    	}
+     	Node<D> currentNode = new Node<D>(firstNode.getData());
+     	
+     	do { System.out.println(currentNode.getData().toString());
+     	currentNode = currentNode.getNextNode();	
+     	}while(currentNode.nextNode !=null);
+     	return "done!";
     }
     
 	
