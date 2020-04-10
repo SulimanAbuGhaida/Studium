@@ -1,5 +1,7 @@
 package DataStruktur;
 
+import lecture.datastructures.DoubleLinkedList.Node;
+
 public class LDoubleLinkedListe<D> {
 	
 	private Node<D> firstNode = null;
@@ -53,6 +55,24 @@ public class LDoubleLinkedListe<D> {
     	}
     
     
+    private Node<D> findNode(D data){
+    	
+    	if(firstNode!=null) {
+    		
+    		Node<D> currentNode = firstNode;
+    		do {
+    			if(currentNode.getData().equals(data)) {
+    				return currentNode;
+    			}
+    			currentNode = currentNode.getNextNode();
+    		}while(currentNode.getNextNode()!=null);
+    	}
+    	
+    	
+    	return null;
+    }
+    
+    
     public boolean contains(D data) {
  	Node<D> currentNode = new Node<D>(data);
     	
@@ -72,17 +92,37 @@ public class LDoubleLinkedListe<D> {
 			return false;
     	}
     
+//   @Override
+//    public String toString() {
+//     	if(this.firstNode==null && this.lastNode==null) {
+//    		return "null";
+//    	}
+//     	Node<D> currentNode = new Node<D>(firstNode.getData());
+//     	
+//     	do { System.out.println(currentNode.getData().toString());
+//     	currentNode = currentNode.getNextNode();	
+//     	}while(currentNode.nextNode !=null);
+//     	return "done!";
+//    }
+    
     @Override
     public String toString() {
-     	if(this.firstNode==null && this.lastNode==null) {
-    		return "null";
-    	}
-     	Node<D> currentNode = new Node<D>(firstNode.getData());
-     	
-     	do { System.out.println(currentNode.getData().toString());
-     	currentNode = currentNode.getNextNode();	
-     	}while(currentNode.nextNode !=null);
-     	return "done!";
+        if(firstNode == null){
+            return "Empty List";
+        }
+
+        return toString(firstNode);
+    }
+
+    private String toString(Node<D> node){
+        String ausgabe = "";
+        ausgabe = ausgabe + node.getData() + "\n";
+
+        if(node.getNextNode() != null) {
+            ausgabe = ausgabe + toString(node.getNextNode());
+        }
+
+        return ausgabe;
     }
     
 	
