@@ -1,6 +1,6 @@
 package DataStruktur;
 
-import lecture.datastructures.DoubleLinkedList.Node;
+//import lecture.datastructures.DoubleLinkedList.Node;
 
 public class LDoubleLinkedListe<D> {
 	
@@ -92,6 +92,7 @@ public class LDoubleLinkedListe<D> {
 			return false;
     	}
     
+ // هذا الكود منطقي ولكن لايحبذ أن نضع ميقود الطباعة سيستم آوت برينت لاين في الكود لأنه كوت تو سترينغ ويرجع لنا سترينغ    
 //   @Override
 //    public String toString() {
 //     	if(this.firstNode==null && this.lastNode==null) {
@@ -104,26 +105,27 @@ public class LDoubleLinkedListe<D> {
 //     	}while(currentNode.nextNode !=null);
 //     	return "done!";
 //    }
+//    
+    
     
     @Override
     public String toString() {
-        if(firstNode == null){
-            return "Empty List";
-        }
-
-        return toString(firstNode);
+    	if(firstNode==null) {
+    		return"Empty List";
+    	}
+    	 return toString(firstNode);
     }
+    public String toString(Node<D> node) {
+    	String ausgabe = "";
+    	ausgabe = ausgabe + node.getData() + "\n";
+    	
+    	if(node.getNextNode()!=null) {
+    		ausgabe = ausgabe + toString(node.getNextNode());
+    	}
 
-    private String toString(Node<D> node){
-        String ausgabe = "";
-        ausgabe = ausgabe + node.getData() + "\n";
-
-        if(node.getNextNode() != null) {
-            ausgabe = ausgabe + toString(node.getNextNode());
-        }
-
-        return ausgabe;
-    }
+    	return ausgabe;
+    } // هنا في الاوسغابيه يكون النوع تو ستريغ وبيضيف الداتا الى جنبه الى أن تنتهي ومن ثم بالآخير يطبع الاوسغابيه
+  
     
 	
 private class Node<D>{
