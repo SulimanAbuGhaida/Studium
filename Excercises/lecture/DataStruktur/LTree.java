@@ -14,7 +14,10 @@ public class LTree<D extends Comparable<D>> {
 		
 		while(currentNode!=null) {
 			  parentNode = currentNode;
-			if(currentNode.getData().compareTo(newNode.getData())<0) {
+			  if(currentNode.getData().compareTo(newNode.getData())==0) {
+				  System.out.println("same items!");
+			  }
+			  else if(currentNode.getData().compareTo(newNode.getData())<0) {
 				currentNode = currentNode.getLeftNode();
 			}else if(currentNode.getData().compareTo(newNode.getData())>0){
 				currentNode = currentNode.getRightNode();
@@ -23,10 +26,10 @@ public class LTree<D extends Comparable<D>> {
 		
 		if(parentNode.getData().compareTo(data)<0) {
 			parentNode.setRightNode(newNode);
-			}else if (parentNode.getData().compareTo(data)>0) {
+			}else 
 			
 				parentNode.setLeftNode(newNode);
-			}else System.out.println("same items");
+			
 		}
 		
 	
