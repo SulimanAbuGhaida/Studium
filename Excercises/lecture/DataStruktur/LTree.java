@@ -10,15 +10,26 @@ public class LTree<D extends Comparable<D>> {
 		Node<D> newNode = new Node<D>(data);
 		
 		Node<D> currentNode = root;
+		Node<D> parentNode = null;
+		
 		while(currentNode!=null) {
+			  parentNode = currentNode;
 			if(currentNode.getData().compareTo(newNode.getData())<0) {
 				currentNode = currentNode.getLeftNode();
 			}else if(currentNode.getData().compareTo(newNode.getData())>0){
 				currentNode = currentNode.getRightNode();
 			}
-		}currentNode = newNode;
+		}
 		
-	}
+		if(parentNode.getData().compareTo(data)<0) {
+			parentNode.setRightNode(newNode);
+			}else if (parentNode.getData().compareTo(data)>0) {
+			
+				parentNode.setLeftNode(newNode);
+			}else System.out.println("same items");
+		}
+		
+	
 		
 	
 	public boolean contains(D data) {
@@ -76,7 +87,7 @@ public class LTree<D extends Comparable<D>> {
 	
 	
 	
-	private class Node<D>{
+	class Node<D>{
 		private D data;
 		private Node<D> leftNode;
 		private Node<D> rightNode;
