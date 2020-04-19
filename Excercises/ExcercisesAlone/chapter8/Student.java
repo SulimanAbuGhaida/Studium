@@ -57,8 +57,8 @@ public class Student {
 		int a = numbers.get(1);
 		
 		
-		for(int a : numbers) {
-			System.out.println(a);
+		for(int a1 : numbers) {
+			System.out.println(a1);
 		}
 			
 			

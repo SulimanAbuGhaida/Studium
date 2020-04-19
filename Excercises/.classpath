@@ -5,6 +5,12 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="KlausurAlone"/>
 	<classpathentry kind="src" path="Semster2"/>
@@ -15,6 +21,7 @@
 	<classpathentry kind="src" path="Übungen_Prog.2_Folien"/>
 	<classpathentry kind="src" path="BergNeels"/>
 	<classpathentry kind="src" path="lecture"/>
+	<classpathentry excluding="src/|KlausurAlone/|Semster2/|UebungenProg2/|KLAUSUR1/|ExcercisesAlone/|others/|Übungen_Prog.2_Folien/|BergNeels/|lecture/" kind="src" path=""/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
