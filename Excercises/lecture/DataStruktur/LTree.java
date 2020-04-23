@@ -165,6 +165,24 @@ public class LTree<D extends Comparable<D>> {
 		System.out.println(currentNode.getData());		
 	}
 	
+	//oppiste of inoder
+	public void oppisteOfInOrder(Node<D> currentNode) {
+		if(currentNode.getRightNode()!= null) {
+			oppisteOfInOrder(currentNode.getRightNode());
+		}
+		System.out.println(currentNode.getData());
+		if(currentNode.getLeftNode()!= null) {
+			oppisteOfInOrder(currentNode.getLeftNode());
+		}
+		
+		System.out.println(currentNode.getData());		
+	}	
+	
+	
+	
+	
+	
+	
 	public void printPreOrder() {
 		if(root ==null) {
 			return;
